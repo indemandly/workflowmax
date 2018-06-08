@@ -1,0 +1,55 @@
+{
+  "name": "workflowmax",
+  "version": "1.0.0",
+  "description": "Workflowmax API for Node.js",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "nodemon --ignore ./logs ./src/index.js --exec babel-node",
+    "lint": "eslint ./src",
+    "lintfix": "eslint --fix ./src",
+    "build": "npm run prepare-eslint && npm run prepare-clean && npm run prepare-babel",
+    "prepare-eslint": "eslint --quiet ./src",
+    "prepare-clean": "rm -rf ./build",
+    "prepare-babel": "babel ./src -d ./build"
+  },
+  "author": "Andrew G Kuznetsov (cav@cav.ru)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indemandly/workflowmax.git"
+  },
+  "homepage": "https://github.com/indemandly/workflowmax",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "keywords": [
+    "workflowmax",
+    "wfm",
+    "wfmapi",
+    "workflow",
+    "max",
+    "api",
+    "xero",
+    "practice",
+    "xeropractice",
+    "crm",
+    "client",
+    "promise",
+    "then",
+    "es6",
+    "es7"
+  ],
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash.frompairs": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}

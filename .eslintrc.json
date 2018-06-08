@@ -1,0 +1,79 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 1}],
+    "no-multi-spaces": ["error", {"exceptions": { "ImportDeclaration": true,  "VariableDeclarator": true }}],
+    "space-in-parens": ["error", "never"],
+    "semi": ["error", "never"],
+    "one-var-declaration-per-line": ["error", "initializations"],
+    "no-console": "off",
+    "no-extra-parens": "warn",
+    "valid-jsdoc": "off",
+    "new-cap": ["warn", {"properties": false}],
+    "comma-spacing": ["error", {"before": false, "after": true}],
+    "comma-style": ["warn", "last"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-extra-boolean-cast": "warn",
+    "strict": ["error", "global"],
+    "no-var": "error",
+    "prefer-const": "error",
+    "space-before-function-paren": ["error", "always"],
+    "space-before-blocks": ["error"],
+    "keyword-spacing": ["error"],
+    "prefer-arrow-callback": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "no-bitwise": "off",
+    "no-cond-assign": ["error", "except-parens"],
+    "curly": "off",
+    "eqeqeq": "error",
+    "no-extend-native": "error",
+    "wrap-iife": ["error", "any"],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "no-use-before-define": "off",
+    "no-caller": "error",
+    "no-undef": "error",
+    "no-unused-vars": "warn",
+    "no-irregular-whitespace": "error",
+    "max-depth": ["error", 8],
+    "quotes": ["error", "single", {"avoidEscape": true}],
+    "linebreak-style": "error",
+    "no-loop-func": "warn",
+    "object-shorthand": "error",
+    "one-var-declaration-per-line": "warn",
+    "no-shadow": "warn",
+    "camelcase": "warn",
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/no-duplicates": 2
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ]
+      }
+    }
+  }
+}
