@@ -1,4 +1,3 @@
-!global._babelPolyfill && require('babel-polyfill')
 const WorkflowMax = require('../build') // Built, node 4+ compatible
 // const WorkflowMax = require('../src') // ES6 (babel-node run)
 
