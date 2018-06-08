@@ -52,6 +52,15 @@ P.S. All unsupported methods can be reached via `raw` requests now
 
 ## Usage
 
+```sh
+npm install workflowmax --save
+```
+or Yarn
+
+```
+yarn add workflowmax
+```
+
 ```js
 var WorkflowMax = require('workflowmax');
 var wfm = new WorkflowMax({ apiKey: 'YOUR_API_KEY', accountKey: 'YOUR_ACCOUNT_KEY'});
