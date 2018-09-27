@@ -10,7 +10,11 @@ import {
   CATEGORIES,
 } from '../../constants/methods'
 
-const ENTITY = 'lead'
+import {
+  LEAD,
+} from '../../constants/entities'
+
+const ENTITY = LEAD
 
 const request = {
   get: rawRequest.get(ENTITY),

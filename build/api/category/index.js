@@ -50,11 +50,13 @@ var _helpers = require('../../helpers');
 
 var _methods = require('../../constants/methods');
 
+var _entities = require('../../constants/entities');
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } // API Page: https://www.workflowmax.com/api/category-methods
 
 /*eslint new-cap: 0*/
 
-var ENTITY = 'category';
+var ENTITY = _entities.CATEGORY;
 
 var request = {
   get: _helpers.entityRaw.get(ENTITY),

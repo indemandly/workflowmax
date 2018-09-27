@@ -3,9 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.categories = exports.add = exports.get = exports.current = exports.list = exports.rawDelete = exports.rawPut = exports.rawPost = exports.rawGet = undefined;
+exports.update = exports.add = exports.get = exports.current = exports.list = exports.rawDelete = exports.rawPut = exports.rawPost = exports.rawGet = undefined;
 
-// List leads
+// List all jobs
 var list = exports.list = function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(apiKey, accountKey, params) {
     return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -27,7 +27,7 @@ var list = exports.list = function () {
   };
 }();
 
-// List current leads
+// List current jobs
 
 
 var current = exports.current = function () {
@@ -51,7 +51,7 @@ var current = exports.current = function () {
   };
 }();
 
-// Get lead by id
+// Get job by id
 
 
 var get = exports.get = function () {
@@ -75,7 +75,7 @@ var get = exports.get = function () {
   };
 }();
 
-// Add lead
+// Add new job
 
 
 var add = exports.add = function () {
@@ -99,16 +99,16 @@ var add = exports.add = function () {
   };
 }();
 
-// List categories
+// Update job
 
 
-var categories = exports.categories = function () {
-  var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(apiKey, accountKey, params) {
+var update = exports.update = function () {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(apiKey, accountKey, data, params) {
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            return _context5.abrupt('return', request.get(apiKey, accountKey, _methods.CATEGORIES, params));
+            return _context5.abrupt('return', request.put(apiKey, accountKey, _methods.UPDATE, data, params));
 
           case 1:
           case 'end':
@@ -118,10 +118,13 @@ var categories = exports.categories = function () {
     }, _callee5, this);
   }));
 
-  return function categories(_x15, _x16, _x17) {
+  return function update(_x15, _x16, _x17, _x18) {
     return _ref5.apply(this, arguments);
   };
 }();
+
+// Delete job
+
 
 var _helpers = require('../../helpers');
 
@@ -130,8 +133,9 @@ var _methods = require('../../constants/methods');
 var _entities = require('../../constants/entities');
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /*eslint new-cap: 0*/
+// https://www.workflowmax.com/api/client-methods
 
-var ENTITY = _entities.LEAD;
+var ENTITY = _entities.JOB;
 
 var request = {
   get: _helpers.entityRaw.get(ENTITY),
@@ -143,4 +147,49 @@ var request = {
 };var rawGet = exports.rawGet = request.get;
 var rawPost = exports.rawPost = request.post;
 var rawPut = exports.rawPut = request.put;
-var rawDelete = exports.rawDelete = request.delete;
+var rawDelete = exports.rawDelete = request.delete;module.exports.delete = function () {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(apiKey, accountKey, data, params) {
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            return _context6.abrupt('return', request.post(apiKey, accountKey, _methods.DELETE, data, params));
+
+          case 1:
+          case 'end':
+            return _context6.stop();
+        }
+      }
+    }, _callee6, this);
+  }));
+
+  return function (_x19, _x20, _x21, _x22) {
+    return _ref6.apply(this, arguments);
+  };
+}();
+
+/*
+
+Ready:
+
++ GET list	Return a list of all clients
++ GET search	Return a list of all clients matching search query
++ GET get/[id]	Detailed information for a specific client
++ POST add	Add a client and contacts
++ PUT update	Update a clients details
++ PUT archive	Archive a client
++ POST delete	Delete a client
+
+@TODO:
+
+GET contact/[id]	Detailed information for a specific contact
+PUT contact/[id]	Update a contacts details
+POST contact	add a contact to a client
+DELETE contact/[id]	delete a contact
+GET documents/[id]	Return a list of documents for a client
+POST document	Add a document to a client
+POST addrelationship	Add a relationship between clients (Practice Manager only)
+POST updaterelationship	Update the relationship details between clients (Practice Manager only)
+POST deleterelationship	Delete the relationship between clients (Practice Manager only)
+
+*/

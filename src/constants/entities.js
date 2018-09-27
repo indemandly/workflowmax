@@ -1,0 +1,6 @@
+export const JOB = 'job'
+export const CATEGORY = 'category'
+export const LEAD = 'lead'
+export const STAFF = 'staff'
+export const CLIENT = 'client'
+export const LIST = 'list'

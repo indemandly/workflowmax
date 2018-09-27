@@ -16,6 +16,6 @@ var DELETE = exports.DELETE = 'delete';
 // User
 var ARCHIVE = exports.ARCHIVE = 'archive';
 
-// Lead
+// Lead / job
 var CURRENT = exports.CURRENT = 'current';
 var CATEGORIES = exports.CATEGORIES = 'categories';

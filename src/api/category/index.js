@@ -8,7 +8,11 @@ import {
   LIST,
 } from '../../constants/methods'
 
-const ENTITY = 'category'
+import {
+  CATEGORY,
+} from '../../constants/entities'
+
+const ENTITY = CATEGORY
 
 const request = {
   get: rawRequest.get(ENTITY),

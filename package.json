@@ -1,6 +1,6 @@
 {
   "name": "workflowmax",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Workflowmax API for Node.js",
   "main": "build/index.js",
   "scripts": {
@@ -47,10 +47,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.5.0",
+    "eslint": "^5.6.0",
     "eslint-plugin-import": "^2.14.0"
   }
 }

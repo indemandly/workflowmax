@@ -12,7 +12,7 @@ var list = exports.list = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            return _context.abrupt('return', request.get(apiKey, accountKey, LIST, params));
+            return _context.abrupt('return', request.get(apiKey, accountKey, _entities.LIST, params));
 
           case 1:
           case 'end':
@@ -29,10 +29,11 @@ var list = exports.list = function () {
 
 var _helpers = require('../../helpers');
 
+var _entities = require('../../constants/entities');
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /*eslint new-cap: 0*/
 
-var ENTITY = 'staff';
-var LIST = 'list';
+var ENTITY = _entities.STAFF;
 
 var request = {
   get: _helpers.entityRaw.get(ENTITY)

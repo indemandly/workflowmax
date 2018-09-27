@@ -41,6 +41,17 @@ staff
  rawPut(method, data, [params])
  rawDelete(method, data, [params])
 
+job
+ list({ from: '20180101', to: '20190101', ...params })
+ current([params])
+ get(id, [params])
+ add(data, [params])
+ update(data, [params])
+ rawGet(method, [params])
+ rawPost(method, data,[params])
+ rawPut(method, data, [params])
+ rawDelete(method, data, [params])
+
 raw
  get(entity, method, [params])
  post(entity, method, data,[params])

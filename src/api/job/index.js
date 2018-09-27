@@ -5,19 +5,18 @@ import { entityRaw as rawRequest } from '../../helpers'
 
 import {
   LIST,
-  SEARCH,
   GET,
   ADD,
   UPDATE,
   DELETE,
-  ARCHIVE,
+  CURRENT,
 } from '../../constants/methods'
 
 import {
-  CLIENT,
+  JOB,
 } from '../../constants/entities'
 
-const ENTITY = CLIENT
+const ENTITY = JOB
 
 const request = {
   get: rawRequest.get(ENTITY),
@@ -32,37 +31,32 @@ export const rawPost = request.post
 export const rawPut = request.put
 export const rawDelete = request.delete
 
-// List clients
+// List all jobs
 export async function list (apiKey, accountKey, params) {
   return request.get(apiKey, accountKey, LIST, params)
 }
 
-// Search clients
-export async function search (apiKey, accountKey, params) {
-  return request.get(apiKey, accountKey, SEARCH, params)
+// List current jobs
+export async function current (apiKey, accountKey, params) {
+  return request.get(apiKey, accountKey, CURRENT, params)
 }
 
-// Get client by id
+// Get job by id
 export async function get (apiKey, accountKey, id, params) {
   return request.get(apiKey, accountKey, GET(id), params)
 }
 
-// Add new client
+// Add new job
 export async function add (apiKey, accountKey, data, params) {
   return request.post(apiKey, accountKey, ADD, data, params)
 }
 
-// Update client
+// Update job
 export async function update (apiKey, accountKey, data, params) {
   return request.put(apiKey, accountKey, UPDATE, data, params)
 }
 
-// Archive client
-export async function archive (apiKey, accountKey, data, params) {
-  return request.put(apiKey, accountKey, ARCHIVE, data, params)
-}
-
-// Delete client
+// Delete job
 module.exports.delete = async function (apiKey, accountKey, data, params) {
   return request.post(apiKey, accountKey, DELETE, data, params)
 }

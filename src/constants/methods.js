@@ -9,6 +9,6 @@ export const DELETE = 'delete'
 // User
 export const ARCHIVE = 'archive'
 
-// Lead
+// Lead / job
 export const CURRENT = 'current'
 export const CATEGORIES = 'categories'

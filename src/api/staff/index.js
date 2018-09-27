@@ -2,9 +2,12 @@
 
 import { entityRaw as rawRequest } from '../../helpers'
 
-const ENTITY = 'staff'
-const
-  LIST = 'list'
+import {
+  STAFF,
+  LIST,
+} from '../../constants/entities'
+
+const ENTITY = STAFF
 
 const request = {
   get: rawRequest.get(ENTITY),
