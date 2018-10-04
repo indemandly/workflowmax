@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.archive = exports.update = exports.add = exports.get = exports.search = exports.list = exports.rawDelete = exports.rawPut = exports.rawPost = exports.rawGet = undefined;
+exports.deleteContact = exports.updateContact = exports.addContact = exports.getContact = exports.archive = exports.update = exports.add = exports.get = exports.search = exports.list = exports.rawDelete = exports.rawPut = exports.rawPost = exports.rawGet = undefined;
 
 // List clients
 var list = exports.list = function () {
@@ -150,6 +150,127 @@ var archive = exports.archive = function () {
 // Delete client
 
 
+// Get client contact
+var getContact = exports.getContact = function () {
+  var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(apiKey, accountKey, id, params) {
+    return regeneratorRuntime.wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            return _context8.abrupt('return', request.get(apiKey, accountKey, (0, _methods.CONTACT_ID)(id), params));
+
+          case 1:
+          case 'end':
+            return _context8.stop();
+        }
+      }
+    }, _callee8, this);
+  }));
+
+  return function getContact(_x27, _x28, _x29, _x30) {
+    return _ref8.apply(this, arguments);
+  };
+}();
+
+// Add client contact
+
+
+var addContact = exports.addContact = function () {
+  var _ref9 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9(apiKey, accountKey, params) {
+    return regeneratorRuntime.wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            return _context9.abrupt('return', request.post(apiKey, accountKey, _methods.CONTACT, params));
+
+          case 1:
+          case 'end':
+            return _context9.stop();
+        }
+      }
+    }, _callee9, this);
+  }));
+
+  return function addContact(_x31, _x32, _x33) {
+    return _ref9.apply(this, arguments);
+  };
+}();
+
+// Update client contact
+
+
+var updateContact = exports.updateContact = function () {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10(apiKey, accountKey, id, params) {
+    return regeneratorRuntime.wrap(function _callee10$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            return _context10.abrupt('return', request.put(apiKey, accountKey, (0, _methods.CONTACT_ID)(id), params));
+
+          case 1:
+          case 'end':
+            return _context10.stop();
+        }
+      }
+    }, _callee10, this);
+  }));
+
+  return function updateContact(_x34, _x35, _x36, _x37) {
+    return _ref10.apply(this, arguments);
+  };
+}();
+
+// Delete client contact
+
+
+var deleteContact = exports.deleteContact = function () {
+  var _ref11 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee11(apiKey, accountKey, id, params) {
+    return regeneratorRuntime.wrap(function _callee11$(_context11) {
+      while (1) {
+        switch (_context11.prev = _context11.next) {
+          case 0:
+            return _context11.abrupt('return', request.delete(apiKey, accountKey, (0, _methods.CONTACT_ID)(id), params));
+
+          case 1:
+          case 'end':
+            return _context11.stop();
+        }
+      }
+    }, _callee11, this);
+  }));
+
+  return function deleteContact(_x38, _x39, _x40, _x41) {
+    return _ref11.apply(this, arguments);
+  };
+}();
+
+/*
+
+Ready:
+
++ GET list	Return a list of all clients
++ GET search	Return a list of all clients matching search query
++ GET get/[id]	Detailed information for a specific client
++ POST add	Add a client and contacts
++ PUT update	Update a clients details
++ PUT archive	Archive a client
++ POST delete	Delete a client
++ GET contact/[id]	Detailed information for a specific contact
++ PUT contact/[id]	Update a contacts details
++ POST contact	add a contact to a client
++ DELETE contact/[id]	delete a contact
+
+@TODO:
+
+GET documents/[id]	Return a list of documents for a client
+POST document	Add a document to a client
+POST addrelationship	Add a relationship between clients (Practice Manager only)
+POST updaterelationship	Update the relationship details between clients (Practice Manager only)
+POST deleterelationship	Delete the relationship between clients (Practice Manager only)
+
+*/
+
+
 var _helpers = require('../../helpers');
 
 var _methods = require('../../constants/methods');
@@ -191,29 +312,3 @@ var rawDelete = exports.rawDelete = request.delete;module.exports.delete = funct
     return _ref7.apply(this, arguments);
   };
 }();
-
-/*
-
-Ready:
-
-+ GET list	Return a list of all clients
-+ GET search	Return a list of all clients matching search query
-+ GET get/[id]	Detailed information for a specific client
-+ POST add	Add a client and contacts
-+ PUT update	Update a clients details
-+ PUT archive	Archive a client
-+ POST delete	Delete a client
-
-@TODO:
-
-GET contact/[id]	Detailed information for a specific contact
-PUT contact/[id]	Update a contacts details
-POST contact	add a contact to a client
-DELETE contact/[id]	delete a contact
-GET documents/[id]	Return a list of documents for a client
-POST document	Add a document to a client
-POST addrelationship	Add a relationship between clients (Practice Manager only)
-POST updaterelationship	Update the relationship details between clients (Practice Manager only)
-POST deleterelationship	Delete the relationship between clients (Practice Manager only)
-
-*/

@@ -11,6 +11,8 @@ import {
   UPDATE,
   DELETE,
   ARCHIVE,
+  CONTACT_ID,
+  CONTACT,
 } from '../../constants/methods'
 
 import {
@@ -67,6 +69,26 @@ module.exports.delete = async function (apiKey, accountKey, data, params) {
   return request.post(apiKey, accountKey, DELETE, data, params)
 }
 
+// Get client contact
+export async function getContact (apiKey, accountKey, id, params) {
+  return request.get(apiKey, accountKey, CONTACT_ID(id), params)
+}
+
+// Add client contact
+export async function addContact (apiKey, accountKey, params) {
+  return request.post(apiKey, accountKey, CONTACT, params)
+}
+
+// Update client contact
+export async function updateContact (apiKey, accountKey, id, params) {
+  return request.put(apiKey, accountKey, CONTACT_ID(id), params)
+}
+
+// Delete client contact
+export async function deleteContact (apiKey, accountKey, id, params) {
+  return request.delete(apiKey, accountKey, CONTACT_ID(id), params)
+}
+
 /*
 
 Ready:
@@ -78,13 +100,13 @@ Ready:
 + PUT update	Update a clients details
 + PUT archive	Archive a client
 + POST delete	Delete a client
++ GET contact/[id]	Detailed information for a specific contact
++ PUT contact/[id]	Update a contacts details
++ POST contact	add a contact to a client
++ DELETE contact/[id]	delete a contact
 
 @TODO:
 
-GET contact/[id]	Detailed information for a specific contact
-PUT contact/[id]	Update a contacts details
-POST contact	add a contact to a client
-DELETE contact/[id]	delete a contact
 GET documents/[id]	Return a list of documents for a client
 POST document	Add a document to a client
 POST addrelationship	Add a relationship between clients (Practice Manager only)

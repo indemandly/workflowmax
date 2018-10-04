@@ -11,6 +11,12 @@ client
  update(data, [params])
  archive(data, [params])
  delete(data, [params])
+
+ getContact(id, [params])
+ addContact(params)
+ updateContact(id, params)
+ deleteContact(id, params)
+
  rawGet(method, [params])
  rawPost(method, data,[params])
  rawPut(method, data, [params])
@@ -21,7 +27,9 @@ lead
  current([params])
  get(id, [params])
  add(data, [params])
+
  categories([params])
+
  rawGet(method, [params])
  rawPost(method, data,[params])
  rawPut(method, data, [params])
@@ -29,6 +37,7 @@ lead
 
 categories
  list([params])
+
  rawGet(method, [params])
  rawPost(method, data,[params])
  rawPut(method, data, [params])
@@ -36,6 +45,7 @@ categories
 
 staff
  list([params])
+
  rawGet(method, [params])
  rawPost(method, data,[params])
  rawPut(method, data, [params])
@@ -47,6 +57,7 @@ job
  get(id, [params])
  add(data, [params])
  update(data, [params])
+ 
  rawGet(method, [params])
  rawPost(method, data,[params])
  rawPut(method, data, [params])

@@ -19,3 +19,9 @@ var ARCHIVE = exports.ARCHIVE = 'archive';
 // Lead / job
 var CURRENT = exports.CURRENT = 'current';
 var CATEGORIES = exports.CATEGORIES = 'categories';
+
+// Client
+var CONTACT = exports.CONTACT = 'contact';
+var CONTACT_ID = exports.CONTACT_ID = function CONTACT_ID(id) {
+  return `${CONTACT}/${id}`;
+};

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.raw = exports.category = exports.staff = exports.lead = exports.client = undefined;
+exports.raw = exports.job = exports.category = exports.staff = exports.lead = exports.client = undefined;
 
 var _client = require('./client');
 
@@ -21,6 +21,10 @@ var _category = require('./category');
 
 var categoryHandler = _interopRequireWildcard(_category);
 
+var _job = require('./job');
+
+var jobHandler = _interopRequireWildcard(_job);
+
 var _raw = require('./raw');
 
 var rawHandler = _interopRequireWildcard(_raw);
@@ -31,4 +35,5 @@ var client = exports.client = clientHandler;
 var lead = exports.lead = leadHandler;
 var staff = exports.staff = stuffHandler;
 var category = exports.category = categoryHandler;
+var job = exports.job = jobHandler;
 var raw = exports.raw = rawHandler;

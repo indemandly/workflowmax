@@ -1,6 +1,6 @@
 {
   "name": "workflowmax",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Workflowmax API for Node.js",
   "main": "build/index.js",
   "scripts": {
